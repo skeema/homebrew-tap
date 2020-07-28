@@ -7,5 +7,3 @@ To install Skeema using Homebrew:
 ```sh
 brew install skeema/tap/skeema
 ```
-
-If running MacOS Catalina, you may need to remove the quarantine bit via `xattr -d com.apple.quarantine /usr/local/bin/skeema`, or alternatively right-click open via Finder once.
