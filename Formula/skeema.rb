@@ -11,7 +11,7 @@ class Skeema < Formula
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/skeema/skeema/releases/download/v1.4.5/skeema_1.4.5_linux_amd64.tar.gz"
-      sha256 "868e877559f208dd0bbd6a783e3eebc26352cd9ccaa3edec10dfe00d8ab7dd92"
+      sha256 "363d253651f8be007ec4f7b6fc33428cf015c9fbfc8a744d96d56d25313089b7"
     end
   end
 
