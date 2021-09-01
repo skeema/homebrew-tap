@@ -5,20 +5,20 @@
 class Skeema < Formula
   desc "Skeema is a tool for managing MySQL tables and schema changes in a declarative fashion using pure SQL."
   homepage "https://www.skeema.io/"
-  version "1.5.2"
+  version "1.5.3"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/skeema/skeema/releases/download/v1.5.2/skeema_1.5.2_mac_amd64.tar.gz"
-      sha256 "3d6b670196a111c419baec66e37affe7a17ab2167b59f78da39b29dee49c05ef"
+      url "https://github.com/skeema/skeema/releases/download/v1.5.3/skeema_1.5.3_mac_amd64.tar.gz"
+      sha256 "d2c57815162b0a2fd3b87b02faa918f6d6a183c08d8a7d9f26396a35af96b322"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/skeema/skeema/releases/download/v1.5.2/skeema_1.5.2_linux_amd64.tar.gz"
-      sha256 "262ba64f52e7e0b047beb9dacf173f1dd9840d70d4306b07f7749bcb208edf8a"
+      url "https://github.com/skeema/skeema/releases/download/v1.5.3/skeema_1.5.3_linux_amd64.tar.gz"
+      sha256 "a96a9651880b2cecf814e1de26947a6769d570cd4e50af2544f1166ab87ff408"
     end
   end
 
