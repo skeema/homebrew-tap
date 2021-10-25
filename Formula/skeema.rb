@@ -6,7 +6,6 @@ class Skeema < Formula
   desc "Skeema is a tool for managing MySQL tables and schema changes in a declarative fashion using pure SQL."
   homepage "https://www.skeema.io/"
   version "1.5.3"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
