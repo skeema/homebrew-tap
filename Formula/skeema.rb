@@ -5,24 +5,35 @@
 class Skeema < Formula
   desc "Skeema is a tool for managing MySQL tables and schema changes in a declarative fashion using pure SQL."
   homepage "https://www.skeema.io/"
-  version "1.5.3"
-  bottle :unneeded
+  version "1.6.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/skeema/skeema/releases/download/v1.5.3/skeema_1.5.3_mac_amd64.tar.gz"
-      sha256 "d2c57815162b0a2fd3b87b02faa918f6d6a183c08d8a7d9f26396a35af96b322"
+      url "https://github.com/skeema/skeema/releases/download/v1.6.0/skeema_1.6.0_mac_amd64.tar.gz"
+      sha256 "f2b868ca238620a9a9da7f3d7b457c8778bdcf615399ba1e35b6e7a2cd62fbd5"
+
+      def install
+        bin.install "skeema"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/skeema/skeema/releases/download/v1.6.0/skeema_1.6.0_mac_arm64.tar.gz"
+      sha256 "4617b722cd8e38899a82d11d5ceb1536859e44bda718a6270d34fb1b8808eb25"
+
+      def install
+        bin.install "skeema"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/skeema/skeema/releases/download/v1.5.3/skeema_1.5.3_linux_amd64.tar.gz"
-      sha256 "a96a9651880b2cecf814e1de26947a6769d570cd4e50af2544f1166ab87ff408"
-    end
-  end
+      url "https://github.com/skeema/skeema/releases/download/v1.6.0/skeema_1.6.0_linux_amd64.tar.gz"
+      sha256 "21fa960e4bdfbe34ddefa6b0d09eb5d21586a0afddfd1ee4a52277705e93e866"
 
-  def install
-    bin.install "skeema"
+      def install
+        bin.install "skeema"
+      end
+    end
   end
 end
