@@ -5,20 +5,20 @@
 class Skeema < Formula
   desc "Skeema is a tool for managing MySQL tables and schema changes in a declarative fashion using pure SQL."
   homepage "https://www.skeema.io/"
-  version "1.10.0"
+  version "1.10.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/skeema/skeema/releases/download/v1.10.0/skeema_1.10.0_mac_arm64.tar.gz"
-      sha256 "326faa3721324feeaa56bc38fb64016e021ddc9b93de3b13d0acecee540067b0"
+      url "https://github.com/skeema/skeema/releases/download/v1.10.1/skeema_1.10.1_mac_arm64.tar.gz"
+      sha256 "ce617c8a62efbb4f50b5084873c0bc50dd225b7817ab8aaa8250f49d8c0411b8"
 
       def install
         bin.install "skeema"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/skeema/skeema/releases/download/v1.10.0/skeema_1.10.0_mac_amd64.tar.gz"
-      sha256 "9a3ae2881f25c700d14259af11bb3347feb650fec165347ae48c84feab334925"
+      url "https://github.com/skeema/skeema/releases/download/v1.10.1/skeema_1.10.1_mac_amd64.tar.gz"
+      sha256 "478abdcb6f49b0c34d54a734c6899a9771be69bf32b6cbdf25423c47bbc5ac11"
 
       def install
         bin.install "skeema"
@@ -28,16 +28,16 @@ class Skeema < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/skeema/skeema/releases/download/v1.10.0/skeema_1.10.0_linux_arm64.tar.gz"
-      sha256 "0ece242c0c54865a5b9e0cc2bdda3662605fb06e4385728cae76470bea5788af"
+      url "https://github.com/skeema/skeema/releases/download/v1.10.1/skeema_1.10.1_linux_arm64.tar.gz"
+      sha256 "88cb2e698056c652aaafe5953a26f068bdc01d6d37e5aa325f9be4f2cecf08d0"
 
       def install
         bin.install "skeema"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/skeema/skeema/releases/download/v1.10.0/skeema_1.10.0_linux_amd64.tar.gz"
-      sha256 "c79c64bf448e61ac448b47c881a1b4970e40ff6bebde80b870a269d2fba4a26d"
+      url "https://github.com/skeema/skeema/releases/download/v1.10.1/skeema_1.10.1_linux_amd64.tar.gz"
+      sha256 "48d6ae7c19375e2f84f289a4599be26666ac146e2da563a895aa67a622716b56"
 
       def install
         bin.install "skeema"
