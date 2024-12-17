@@ -5,20 +5,20 @@
 class Skeema < Formula
   desc "Skeema is a tool for managing MySQL tables and schema changes in a declarative fashion using pure SQL."
   homepage "https://www.skeema.io/"
-  version "1.12.1"
+  version "1.12.2"
 
   on_macos do
     on_intel do
-      url "https://github.com/skeema/skeema/releases/download/v1.12.1/skeema_1.12.1_mac_amd64.tar.gz"
-      sha256 "b9ae27a776ffc54a4471a0f356e25a08c469b1883ea64f519f1db1f910ad2d60"
+      url "https://github.com/skeema/skeema/releases/download/v1.12.2/skeema_1.12.2_mac_amd64.tar.gz"
+      sha256 "271a291bf24f4498dd162f60d9739f3c715ea6ae2c1ff4ef4d70b3c33736172b"
 
       def install
         bin.install "skeema"
       end
     end
     on_arm do
-      url "https://github.com/skeema/skeema/releases/download/v1.12.1/skeema_1.12.1_mac_arm64.tar.gz"
-      sha256 "70fbf635b3787a92a3bc5b605cd584453d5b4eafd10f4e28024c2eaab1d46c30"
+      url "https://github.com/skeema/skeema/releases/download/v1.12.2/skeema_1.12.2_mac_arm64.tar.gz"
+      sha256 "8040718fffce0802717657ad404e097bf633fa70d5b25f4392055d45ed77e8f4"
 
       def install
         bin.install "skeema"
@@ -29,8 +29,8 @@ class Skeema < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/skeema/skeema/releases/download/v1.12.1/skeema_1.12.1_linux_amd64.tar.gz"
-        sha256 "17a6a5bcf306c916ef01145637e595d434bc6f24a1170de6266fbf6497e5fbe8"
+        url "https://github.com/skeema/skeema/releases/download/v1.12.2/skeema_1.12.2_linux_amd64.tar.gz"
+        sha256 "b9f6dd4769e16c0d526d8a5c71d396a479d789b7f691648f4a9d0d9033d35ad6"
 
         def install
           bin.install "skeema"
@@ -39,8 +39,8 @@ class Skeema < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/skeema/skeema/releases/download/v1.12.1/skeema_1.12.1_linux_arm64.tar.gz"
-        sha256 "4dce102a27484346ef33fd332370c1ea7309d13e6f37bdcce2a8a0bc30ca34dc"
+        url "https://github.com/skeema/skeema/releases/download/v1.12.2/skeema_1.12.2_linux_arm64.tar.gz"
+        sha256 "aee35e515f7839850cb3072fed6dc4559504b31ff984ef36784a0ea8fbee3115"
 
         def install
           bin.install "skeema"
