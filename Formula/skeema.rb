@@ -5,20 +5,20 @@
 class Skeema < Formula
   desc "Skeema is a tool for managing MySQL tables and schema changes in a declarative fashion using pure SQL."
   homepage "https://www.skeema.io/"
-  version "1.12.3"
+  version "1.13.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/skeema/skeema/releases/download/v1.12.3/skeema_1.12.3_mac_amd64.tar.gz"
-      sha256 "49dfd79b08542009727782b93f78cf9fd619669024e22e6ed82484e6b8db28f9"
+      url "https://github.com/skeema/skeema/releases/download/v1.13.0/skeema_1.13.0_mac_amd64.tar.gz"
+      sha256 "31c6121e95476d169d66d771bdb3cfdd1cc986d3a4327651a9c7d38281b88d4a"
 
       def install
         bin.install "skeema"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/skeema/skeema/releases/download/v1.12.3/skeema_1.12.3_mac_arm64.tar.gz"
-      sha256 "c114fe6497aff6123bc7a37775a44994d8753b568f158788e70c4e0f88c26901"
+      url "https://github.com/skeema/skeema/releases/download/v1.13.0/skeema_1.13.0_mac_arm64.tar.gz"
+      sha256 "fa3e7db079eac89c25864a23d742269e05f821abfec9af3d8c550b5387d8b8c0"
 
       def install
         bin.install "skeema"
@@ -27,24 +27,18 @@ class Skeema < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/skeema/skeema/releases/download/v1.12.3/skeema_1.12.3_linux_amd64.tar.gz"
-        sha256 "7e7825f27407a79ff7f109ea41ceb4442cde3d075683a4149246e19848d817b8"
-
-        def install
-          bin.install "skeema"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/skeema/skeema/releases/download/v1.13.0/skeema_1.13.0_linux_amd64.tar.gz"
+      sha256 "e96392c178ffac3848eac077ac5f6a76e16c99718c50aa0a50d88df854b5c56f"
+      def install
+        bin.install "skeema"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/skeema/skeema/releases/download/v1.12.3/skeema_1.12.3_linux_arm64.tar.gz"
-        sha256 "036b5afe43110db73db99c48e831ed83631d926f5bbf1b33ff9aada440753c45"
-
-        def install
-          bin.install "skeema"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/skeema/skeema/releases/download/v1.13.0/skeema_1.13.0_linux_arm64.tar.gz"
+      sha256 "80b11e6a250097fec3bee37f38cd8653ce3475ff33815b5cf11e3a6ab81d7371"
+      def install
+        bin.install "skeema"
       end
     end
   end
