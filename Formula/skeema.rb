@@ -5,41 +5,23 @@
 class Skeema < Formula
   desc "Skeema is a tool for managing MySQL tables and schema changes in a declarative fashion using pure SQL."
   homepage "https://www.skeema.io/"
-  version "1.13.2"
+  version "1.14.0"
+  depends_on :macos
 
-  on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/skeema/skeema/releases/download/v1.13.2/skeema_1.13.2_mac_amd64.tar.gz"
-      sha256 "a9db86d5dd5d11eb2e1899d68cc67335ad504ebd72eb93287b426f56d6bbc595"
+  if Hardware::CPU.intel?
+    url "https://github.com/skeema/skeema/releases/download/v1.14.0/skeema_1.14.0_mac_amd64.zip"
+    sha256 "87198bbeb5af5a7695f1566a88f80792added7481d45af4d28be114996a077d9"
 
-      def install
-        bin.install "skeema"
-      end
-    end
-    if Hardware::CPU.arm?
-      url "https://github.com/skeema/skeema/releases/download/v1.13.2/skeema_1.13.2_mac_arm64.tar.gz"
-      sha256 "c900586070246ecf3985cf312a1455b32fbe431017a08bc5fe08b376bcacccab"
-
-      def install
-        bin.install "skeema"
-      end
+    define_method(:install) do
+      bin.install "skeema"
     end
   end
+  if Hardware::CPU.arm?
+    url "https://github.com/skeema/skeema/releases/download/v1.14.0/skeema_1.14.0_mac_arm64.zip"
+    sha256 "f6b697ce97c1268d05f764779f7ae764ad479afb6a5033f20d8a4ef3e3354bcb"
 
-  on_linux do
-    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/skeema/skeema/releases/download/v1.13.2/skeema_1.13.2_linux_amd64.tar.gz"
-      sha256 "4df7e01a5d57da1abedc35c1446744af701fcf37160991b17c652ca81b2721d6"
-      def install
-        bin.install "skeema"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/skeema/skeema/releases/download/v1.13.2/skeema_1.13.2_linux_arm64.tar.gz"
-      sha256 "0d73913bd80f5c7705451160312157caa024f04a1bca29423d27ad10e535fc5c"
-      def install
-        bin.install "skeema"
-      end
+    define_method(:install) do
+      bin.install "skeema"
     end
   end
 end
