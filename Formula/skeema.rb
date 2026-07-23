@@ -5,23 +5,41 @@
 class Skeema < Formula
   desc "Skeema is a tool for managing MySQL tables and schema changes in a declarative fashion using pure SQL."
   homepage "https://www.skeema.io/"
-  version "1.14.0"
-  depends_on :macos
+  version "1.14.1"
 
-  if Hardware::CPU.intel?
-    url "https://github.com/skeema/skeema/releases/download/v1.14.0/skeema_1.14.0_mac_amd64.zip"
-    sha256 "87198bbeb5af5a7695f1566a88f80792added7481d45af4d28be114996a077d9"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/skeema/skeema/releases/download/v1.14.1/skeema_1.14.1_mac_amd64.tar.gz"
+      sha256 "df8b8cf4d23ab62f73220ad4d6f4fb57fe4c67173638f8fba08f52d82fa618ec"
 
-    define_method(:install) do
-      bin.install "skeema"
+      define_method(:install) do
+        bin.install "skeema"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/skeema/skeema/releases/download/v1.14.1/skeema_1.14.1_mac_arm64.tar.gz"
+      sha256 "fd7482c147c8ee8d4a42783c4a98cacd784e38f10a61f7b0a9887d6bf233fe96"
+
+      define_method(:install) do
+        bin.install "skeema"
+      end
     end
   end
-  if Hardware::CPU.arm?
-    url "https://github.com/skeema/skeema/releases/download/v1.14.0/skeema_1.14.0_mac_arm64.zip"
-    sha256 "f6b697ce97c1268d05f764779f7ae764ad479afb6a5033f20d8a4ef3e3354bcb"
 
-    define_method(:install) do
-      bin.install "skeema"
+  on_linux do
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/skeema/skeema/releases/download/v1.14.1/skeema_1.14.1_linux_amd64.tar.gz"
+      sha256 "bc0482bb4c26740e9a03fd80f58feda7eec30000e8217c1f6acf0e2043a54278"
+      define_method(:install) do
+        bin.install "skeema"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/skeema/skeema/releases/download/v1.14.1/skeema_1.14.1_linux_arm64.tar.gz"
+      sha256 "522eb0cc1ee8f9b3be293d57de5c125182093e2270fe332b8c59c8ede53dca24"
+      define_method(:install) do
+        bin.install "skeema"
+      end
     end
   end
 end
